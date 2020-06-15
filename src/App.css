@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  background-color: #000;
 }
 
 .App-logo {
@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +27,75 @@
 .App-link {
   color: #61dafb;
 }
+
+.Sesh {
+  width: 100%;
+  height: 100%;
+}
+
+.Control-Bar {
+  /* display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 10vh auto; */
+  width: 100%;
+  height: auto;
+  position: absolute;
+  text-align: center;
+   z-index:2;
+}
+
+.buttons {
+
+}
+
+.form{
+
+  padding:2;
+height: auto;
+width: auto;
+position: absolute;
+margin: auto;
+top: 0px;
+ z-index:3;
+}
+
+.input{
+  background: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  margin: auto;
+  width: 32vw;
+  /* padding:1; */
+  border-radius: 18px;
+  text-indent: 2;
+}
+
+#device{
+  background: rgba(255, 0, 255, 0.3);
+  align-items: left;
+  justify-content: center;
+}
+
+#ytplayer {
+   width:100%;
+   height:100%;
+   position: fixed;
+   padding:0;
+   border:0;
+ }
+/* .YT-Player {
+
+  width:100%;
+
+  position: absolute;
+  padding:0;
+  border:0;
+  z-index: 999;
+  display:block;
+  position:absolute;
+  height: auto;
+  width: auto;
+} */
+
 
 @keyframes App-logo-spin {
   from {
