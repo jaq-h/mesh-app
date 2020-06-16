@@ -6,14 +6,9 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom'
 
-const MyApp = () => (
-  // <CookieStore>
-  <Router>
-    <App/>
-  </Router>
-);
-
 ReactDOM.render(
-  <MyApp/>,
+  <Router>
+  <App/>
+</Router>,
   document.getElementById('root')
 );
