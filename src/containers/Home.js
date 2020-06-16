@@ -35,11 +35,11 @@ class Home extends Component {
 
   handleScriptLoad = () => {
     console.log(this.state.currentUser.access_token);
-  //   if(this.state.currentUser.access_token === undefined ){
+    if(this.state.currentUser.access_token === undefined ){
 
-  //       window.location = "https://mesh-media.herokuapp.com//api/auth"
+        window.location = "https://mesh-media.herokuapp.com//api/auth"
 
-  //  }
+   }
   const interval = setInterval(() => {
     if ('Spotify' in window) {
       clearInterval(interval);
