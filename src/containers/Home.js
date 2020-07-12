@@ -21,6 +21,7 @@ class Home extends Component {
       currentUser: this.props.currentUser,
       thisDevice: null,
       playerState: null,
+      showSearch: false,
       youtubeSearch: null,
     }
 
@@ -37,7 +38,7 @@ class Home extends Component {
     console.log(this.state.currentUser.access_token);
     if(this.state.currentUser.access_token === undefined ){
 
-        window.location = "https://mesh-media.herokuapp.com//api/auth"
+        window.location = "http://localhost:3001/api/auth"
 
    }
   const interval = setInterval(() => {
@@ -217,6 +218,13 @@ class Home extends Component {
     this.setState({youtubeSearch: e});
 
   }
+  
+  toggleSearch = () =>{
+    console.log('searchtoggle');
+    this.setState(state => ({
+      showSearch: !state.showSearch,
+    }));
+  }
 
 
   render() {
@@ -239,10 +247,10 @@ class Home extends Component {
         onError={this.handleScriptError}
         onLoad={this.handleScriptLoad}
       />
-      <ControlBar actions={controlMethods} player={this.state.playerState} user={this.state.currentUser} search={this.searchVideo}  />
+      <ControlBar actions={controlMethods} player={this.state.playerState} user={this.state.currentUser} showSearch={this.toggleSearch}  />
 
         <YouTubePlayer  search={this.state.youtubeSearch}/>
-        <SearchBar search={this.searchVideo} />
+        <SearchBar search={this.searchVideo} showSearch={this.state.showSearch} />
       </div>
     );
   }
