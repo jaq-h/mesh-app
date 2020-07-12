@@ -16,7 +16,7 @@ class Home extends Component {
     // if(this.props.currentUser.access_token === undefined ){
     //   this.props.history.go('http://localhost:3001/api/auth');
 
-
+    // }
     this.state = {
       currentUser: this.props.currentUser,
       thisDevice: null,
