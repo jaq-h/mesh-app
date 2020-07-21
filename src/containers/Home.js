@@ -41,6 +41,7 @@ class Home extends Component {
 
 
     }
+
   const interval = setInterval(() => {
     if ('Spotify' in window) {
       clearInterval(interval);
