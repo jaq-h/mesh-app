@@ -13,6 +13,7 @@
     "react-scripts": "3.4.1",
     "react-youtube": "^7.11.2",
     "semantic-ui-react": "^0.88.2",
+    "serve": "^11.3.2",
     "universal-cookie": "^4.0.3"
   },
   "scripts": {
