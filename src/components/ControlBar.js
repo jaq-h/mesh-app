@@ -78,9 +78,9 @@ class ControlBar extends Component {
     return(
       <div  className="Control-Bar">
         <div className="buttons" >
-        <Icon onClick={this.props.showSearch} color='purple' name={'youtube'}/>
+        <Icon onClick={this.props.showSearch} size='large' color='purple' name={'youtube'}/>
         <a>|&nbsp;</a>
-        <Icon onClick={this.toggleMusic} color='purple'name='spotify'/>
+        <Icon onClick={this.toggleMusic} size='large' color='purple'name='spotify'/>
 
         {controlButtons}
         <Icon onClick={this.toggleDevices}color='purple' name={'headphones'}/>
