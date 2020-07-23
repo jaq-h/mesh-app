@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Label} from 'semantic-ui-react';
 import * as $ from "jquery";
 
 class DeviceList extends Component {
@@ -27,7 +28,7 @@ class DeviceList extends Component {
 
         success: (data) => {
         console.log(data);
-        let devices = data.devices.map((d) => <li className="device" onClick={this.handleClick.bind(this)} id={d.id} key={d.id}>{d.name}</li>);
+        let devices = data.devices.map((d) => <Label style={{padding:'5px',marginTop:'5px'}}className="device" onClick={this.handleClick.bind(this)} id={d.id} key={d.id}>{d.name}</Label>);
 
          this.setState({'deviceList': devices});
 
@@ -45,7 +46,7 @@ class DeviceList extends Component {
   }
 
   render(){
-    const style = !this.props.show ? {display: 'none', backgroundColor: 'blue'} : {display: 'inline',  backgroundColor: 'blue'};
+    const style = !this.props.show ? {display: 'none'} : {display: 'block'}
     console.log(this.state.deviceList);
     return (
       <div style={style}>
