@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {  Icon } from 'semantic-ui-react'
-import DeviceList from './DeviceList.js'
-import MusicList from './MusicList.js'
+import {  Icon } from 'semantic-ui-react';
+import DeviceList from './DeviceList.js';
+import MusicList from './MusicList.js';
 class ControlBar extends Component {
   constructor(props){
     super(props);
