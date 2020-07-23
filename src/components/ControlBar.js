@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Icon } from 'semantic-ui-react';
+import { Label, Icon } from 'semantic-ui-react';
 import DeviceList from './DeviceList.js';
 import MusicList from './MusicList.js';
 class ControlBar extends Component {
@@ -34,26 +34,26 @@ class ControlBar extends Component {
     if(this.props.player)
     {
       this.props.player.shuffle ?
-        b.push( <Icon onClick={this.props.actions.shuffle} color='purple'name='random'/>)
-      : b.push( <Icon onClick={this.props.actions.shuffle} color='purple'name='arrows alternate horizontal'/>)
+        b.push( <Icon onClick={this.props.actions.shuffle} color='grey'name='random'/>)
+      : b.push( <Icon onClick={this.props.actions.shuffle} color='grey'name='arrows alternate horizontal'/>)
 
-      b.push( <Icon onClick={this.props.actions.prev}  color='purple' name='step backward'/> )
+      b.push( <Icon onClick={this.props.actions.prev}  color='grey' name='step backward'/> )
 
       this.props.player.paused ?
-        b.push( <Icon onClick={this.props.actions.play} color='purple' name='play circle outline'/>)
-      : b.push( <Icon onClick={this.props.actions.pause} color='purple' name='pause circle outline'/>)
+        b.push( <Icon onClick={this.props.actions.play} color='grey' name='play circle outline'/>)
+      : b.push( <Icon onClick={this.props.actions.pause} color='grey' name='pause circle outline'/>)
 
-      b.push( <Icon onClick={this.props.actions.skip} color='purple' name='step forward'/> )
+      b.push( <Icon onClick={this.props.actions.skip} color='grey' name='step forward'/> )
       console.log(this.props.player.repeat_mode);
       switch(this.props.player.repeat_mode) {
         case 0:
-            b.push( <Icon id="context" onClick={this.props.actions.loop.bind(this)} color='purple' name='long arrow alternate right'/>);
+            b.push( <Icon id="context" onClick={this.props.actions.loop.bind(this)} color='grey' name='long arrow alternate right'/>);
             break;
         case 1:
-            b.push( <Icon id="track" onClick={this.props.actions.loop.bind(this)} color='purple' name='sync alternate'/>);
+            b.push( <Icon id="track" onClick={this.props.actions.loop.bind(this)} color='grey' name='sync alternate'/>);
             break;
         case 2:
-            b.push( <Icon id="off" onClick={this.props.actions.loop.bind(this)} color='purple' name='redo alternate'/>);
+            b.push( <Icon id="off" onClick={this.props.actions.loop.bind(this)} color='grey' name='redo alternate'/>);
           break;
           default:
           console.log('error');
@@ -63,10 +63,10 @@ class ControlBar extends Component {
     }
     else{
 
-      b.push( <Icon onClick={this.props.actions.prev} color='purple' name='step backward'/> )
-      b.push( <Icon onClick={this.props.actions.play} color='purple'name='play'/>)
-      b.push( <Icon onClick={this.props.actions.pause} color='purple'name='pause'/>)
-      b.push( <Icon onClick={this.props.actions.skip} color='purple' name='step forward'/> )
+      b.push( <Icon onClick={this.props.actions.prev} color='grey' name='step backward'/> )
+      b.push( <Icon onClick={this.props.actions.play} color='grey'name='play'/>)
+      b.push( <Icon onClick={this.props.actions.pause} color='grey'name='pause'/>)
+      b.push( <Icon onClick={this.props.actions.skip} color='grey' name='step forward'/> )
 
     }
     return b;
@@ -78,12 +78,17 @@ class ControlBar extends Component {
     return(
       <div  className="Control-Bar">
         <div className="buttons" >
-        <Icon onClick={this.props.showSearch} size='large' color='purple' name={'youtube'}/>
-        <a>|&nbsp;</a>
-        <Icon onClick={this.toggleMusic} size='large' color='purple'name='spotify'/>
+        <Label style={{padding:'5px'}}>
+           <Icon onClick={this.props.showSearch} color='red' name={'youtube'}/>
+           <Icon onClick={this.props.showSearch} color='grey' name={'search'}/>
+          </Label>
 
-        {controlButtons}
-        <Icon onClick={this.toggleDevices}color='purple' name={'headphones'}/>
+          <Label style={{padding:'5px'}}>
+            <Icon onClick={this.toggleMusic} color='green'name='spotify'/>
+            {controlButtons}
+            <Icon onClick={this.toggleDevices}color='grey' name={'headphones'}/>
+          </Label>
+        
         </div>
         <DeviceList  show={this.state.showDevices} token={this.props.user.access_token} deviceClick={this.props.actions.device} />
         <MusicList  show={this.state.showMusic} user={this.props.user}  />
